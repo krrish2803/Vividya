@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "VITE_API_URL=https://vividya.onrender.com npm run build"
   publish = "dist"
 
 [build.environment]
