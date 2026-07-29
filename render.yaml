@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: vividya-backend
+    env: node
+    plan: free
+    rootDir: vividya-backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        sync: false
+        placeholder: "Your MongoDB Atlas connection URI"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NVIDIA_API_KEY
+        sync: false
+        placeholder: "Your NVIDIA NIM Developer API key"
+      - key: SARVAM_API_KEY
+        sync: false
+        placeholder: "Your Sarvam AI API key"
