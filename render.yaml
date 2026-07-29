@@ -20,3 +20,11 @@ services:
       - key: SARVAM_API_KEY
         sync: false
         placeholder: "Your Sarvam AI API key"
+      - key: QDRANT_CLUSTER_ENDPOINT
+        sync: false
+        placeholder: "Your Qdrant Cluster URL"
+      - key: QDRANT_API_KEY
+        sync: false
+        placeholder: "Your Qdrant cluster API key"
+      - key: QDRANT_COLLECTION
+        value: "vividya_notes"

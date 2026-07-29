@@ -118,12 +118,15 @@ For immediate local testing, you can bypass signup and use the preset demo accou
    ```
 3. Create a `.env` file in the backend root directory:
    ```env
-   PORT=3000
-   MONGODB_URI=your_mongodb_atlas_uri
-   JWT_SECRET=your_secret_signing_key
-   NVIDIA_API_KEY=your_nvidia_nim_key
-   SARVAM_API_KEY=your_sarvam_api_key
-   ```
+    PORT=3000
+    MONGODB_URI=your_mongodb_atlas_uri
+    JWT_SECRET=your_secret_signing_key
+    NVIDIA_API_KEY=your_nvidia_nim_key
+    SARVAM_API_KEY=your_sarvam_api_key
+    QDRANT_CLUSTER_ENDPOINT=your_qdrant_cluster_url
+    QDRANT_API_KEY=your_qdrant_api_key
+    QDRANT_COLLECTION=vividya_notes
+    ```
 4. Start backend in development mode:
    ```bash
    npm run dev
