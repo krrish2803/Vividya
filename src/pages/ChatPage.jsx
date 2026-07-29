@@ -8,6 +8,8 @@ import {
   MessageCircle, X, Image, Loader2, StopCircle
 } from 'lucide-react';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 export default function ChatPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -179,7 +181,7 @@ export default function ChatPage() {
       }
 
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/chat/voice', {
+      const res = await fetch(`${API_BASE}/chat/voice`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData,
@@ -216,7 +218,7 @@ export default function ChatPage() {
       formData.append('subject', 'General');
 
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/notes/upload', {
+      const res = await fetch(`${API_BASE}/notes/upload`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData,
