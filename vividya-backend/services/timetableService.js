@@ -100,7 +100,7 @@ Respond in JSON only as an array of objects:
 ]`;
     try {
       const response = await generateTutorResponse(prompt, 'en');
-      const jsonMatch = response.match(/\[[\s\S]*\]/);
+      const jsonMatch = response.text.match(/\[[\s\S]*\]/);
       if (jsonMatch) {
         taskQueue = JSON.parse(jsonMatch[0]);
       }
