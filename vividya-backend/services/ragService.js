@@ -7,7 +7,7 @@ import logger from '../utils/logger.js';
 const VECTOR_DIM = 1024;
 
 const qdrant = new QdrantClient({
-  url: process.env.QDRANT_CLUSTER_ENDPOINT,
+  url: process.env.QDRANT_CLUSTER_ENDPOINT || process.env.QDRANT_URL,
   apiKey: process.env.QDRANT_API_KEY,
 });
 
