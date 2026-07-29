@@ -24,8 +24,20 @@ connectDB();
 initQdrantCollection().catch(err => logger.error(`Qdrant init error: ${err.message}`));
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:3001',
+  'https://vividya-krrish.netlify.app'
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3001',
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps or curl requests)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1 || origin === process.env.CORS_ORIGIN) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
