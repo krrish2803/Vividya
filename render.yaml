@@ -12,14 +12,20 @@ services:
       - key: MONGODB_URI
         sync: false
         placeholder: "Your MongoDB Atlas connection URI"
-      - key: JWT_SECRET
+      - key: JWT_ACCESS_SECRET
         generateValue: true
-      - key: NVIDIA_API_KEY
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: NVIDIA_NIM_API_KEY
         sync: false
         placeholder: "Your NVIDIA NIM Developer API key"
+      - key: NVIDIA_NIM_API_URL
+        value: "https://integrate.api.nvidia.com/v1"
       - key: SARVAM_API_KEY
         sync: false
         placeholder: "Your Sarvam AI API key"
+      - key: SARVAM_API_URL
+        value: "https://api.sarvam.ai"
       - key: QDRANT_CLUSTER_ENDPOINT
         sync: false
         placeholder: "Your Qdrant Cluster URL"
